@@ -1,13 +1,11 @@
 import time
+from character import Character
 
-class Hero(object):
+class Hero(Character):
 	def __init__(self):
-		self.name = "Incognito"
-		self.health = 10
-		self.power = 5
-
-	def alive(self):
-		return self.health > 0
+		Character.__init__(self, "Hero", 6, 2)
+		self.luck = 0
+		self.shield = 0
 
 	def attack(self, enemy):
 		print "%s attacks %s with %d power." % (self.name, enemy.name, self.power)
